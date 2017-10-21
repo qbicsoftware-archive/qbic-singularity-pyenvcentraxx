@@ -28,7 +28,7 @@ singularity pull shub://qbicsoftware/qbic-singularity-pyenvcentraxx:v1.0
 ...
 ```
 
-## How to run the container and calling SnpEff
+## How to run the container and calling the Python environment
 To run the container and calling Python 2.7 you just need to 
 
 ```bash
