@@ -5,12 +5,19 @@ From:alpine:3.6
 /bin/sh build.sh
 
 %files
-#Installation of tool
 build.sh
 
+%runscript
+    echo "Arguments received: $*"
+    exec python2.7 "$@"
+
 %environment
-#Set your toolname here and the appropriate version to have this in the metadata of your container
-    <TOOL>_VERSION=v1.0
+of your container
+    PYENVCENTRAXX_VERSION=v1.0
 
 %labels
-Maintainer	alexander.peltzer@uni-tuebingen.de
+Maintainer	sven.fillinger@qbic.uni-tuebingen.de
+
+%test
+    python2 --version
+    pip -V	
