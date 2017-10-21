@@ -1,4 +1,4 @@
-# qbic-singularity-snpeff
+# qbic-singularity-pyenvcentraxx
 
 This container provides an isolated Python 2.7 environment in order to be used during execution of Python scripts for the CentraXX interaction.
 
