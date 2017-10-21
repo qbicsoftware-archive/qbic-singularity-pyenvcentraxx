@@ -1,19 +1,40 @@
-# Containers for QBIC
+# qbic-singularity-snpeff
 
-This is the central template repository for creating Singularity containers being used at [QBIC](https://qbic.life) in Tübingen, Germany.
+This container provides an isolated Python 2.7 environment in order to be used during execution of Python scripts for the CentraXX interaction.
 
-For further information or help, please contact: alexander.peltzer@qbic.uni-tuebingen.de. 
+## Bootstrap files with tags
+We provide always a bootstrap file (`Singularity`) tagged `.latest` which represents the most resent development status of the container. If you see version tags like `.v1.0`, this means that this is the recipe of a container with a stable version tag.
 
-## Documentation
+## How to build the container
 
-### Image sizes
+Clone the repository:
 
-To keep image sizes as small as possible, we use the Alpine Linux base image (only 5MB in size)! instead of using full-size dependencies that we dont want to have in our environment at all. 
+```bash
+git clone https://github.com/qbicsoftware/qbic-singularity-pyenvcentraxx.git
+cd qbic-singularity-pyenvcentraxx
+```
 
-### Template Image
+Since Singularity 2.4, the build command from file looks like this:
 
-The template Singularity file can be found in the root of this repository. Please rename the file according to our SOP to `Singularity.<toolname/pipeline-name>` or accordingly. Accompanying this, a `build.sh` file is also stored here, typically used to install stuff in the image environment. If you have multiple versions, copy the `Singularity.latest` file and keep it as a specific version there. 
+```bash
+sudo singularity build myContainer.simg <Singularity file>
+```
 
+You can also download the build and ready-to-use container from Singularity Hub:
+
+```bash
+singularity pull shub://qbicsoftware/qbic-singularity-pyenvcentraxx:latest
+singularity pull shub://qbicsoftware/qbic-singularity-pyenvcentraxx:v1.0
+...
+```
+
+## How to run the container and calling SnpEff
+To run the container and calling Python 2.7 you just need to 
+
+```bash
+singularity run myContainer.simg
+singularity run myContainer.simg <python-script.py>
+```
 ## Author
 
-* [Alexander Peltzer](https://github.com/apeltzer)
+* [Sven Fillinger](https://github.com/sven1103)
