@@ -1,4 +1,5 @@
 # qbic-singularity-pyenvcentraxx
+[![DOI](https://zenodo.org/badge/107791711.svg)](https://zenodo.org/badge/latestdoi/107791711)
 
 This container provides an isolated Python 2.7 environment in order to be used during execution of Python scripts for the CentraXX interaction.
 
